@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+   #wrapper {
+    width: 600px;
+    height: 600px;
+    display: flex;
+   } 
+   .spalteLinks {
+    width: 50%;
+    height: 100%;
+    background-color: red;
+   }
+   .spalteRechts {
+    width: 50%;
+    height: 100%;
+    background-color: blue;
+   }
+   .hoehe2-5 {
+    height: 40%;
+   }
+   .hoehe1-5 {
+    height: 20%;
+   }
+   .green {
+    background-color: green;
+   }
+   .beige {
+    background-color: rgb(221, 211, 167);
+   }
+   .pink {
+    background-color: pink;
+   }
+   .spalteRechts div:nth-child(even) {
+    background-color: lightgreen;
+   }
+   .flex {
+    display: flex;
+   }
+   .flex div {
+    width: 50%;
+   }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="spalteLinks">
+      <div class="hoehe2-5 pink"></div>
+      <div class="hoehe2-5 green"></div>
+      <div class="hoehe1-5 beige"></div>
+    </div>
+    <div class="spalteRechts">
+      <div class="hoehe1-5 flex">
+        <div>links</div>
+        <div>rechts</div>
+      </div>
+      <div class="hoehe1-5"></div>
+      <div class="hoehe1-5"></div>
+      <div class="hoehe1-5"></div>
+      <div class="hoehe1-5"></div>
+    </div>
+  </div>
+</body>
+</html>
