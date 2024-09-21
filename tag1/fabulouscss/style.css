@@ -1,0 +1,27 @@
+/*-----Tags----*/
+body {
+}
+
+h1 {
+  color: red;
+}
+
+p {
+  letter-spacing: 1px;
+}
+
+/*-----ID----*/
+#poetry {
+  color: blue;
+}
+
+/*-----Klassen----*/
+.first {
+  text-decoration: underline;
+}
+.second {
+  background-color: yellow;
+}
+.third {
+  text-align: right;
+}
