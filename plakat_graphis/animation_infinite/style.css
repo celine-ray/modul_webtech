@@ -51,8 +51,6 @@ body {
 /* Buchstabe g */
 .g {
   transform: translate(0.7rem, 1.5rem);
-  opacity: 0;
-  animation: opacity 0.1s ease-in-out forwards 2.5s;
 }
 /* Container r */
 .containerR {
@@ -62,8 +60,6 @@ body {
 /* Buchstabe r */
 .r {
   transform: translate(-0.6rem, 1.5rem);
-  opacity: 0;
-  animation: opacity 0.2s ease-in-out forwards 3.5s;
 }
 /* Container graphis */
 .containerGraphis {
@@ -75,25 +71,18 @@ body {
 .graphis {
   font-size: 2.5rem;
   transform: translate(2rem, 1rem) rotate(-90deg);
-  opacity: 0;
-  animation: opacity 0.2s ease-in-out forwards 5.5s;
 }
 /* Container a */
 .containerA {
   grid-column: 8 / 10;
   grid-row: 1 / 4;
 }
-/* Buchstabe a */
-.a {
-  opacity: 0;
-  animation: opacity 0.2s ease-in-out forwards 4s;
-}
 /* Container ph */
 .containerPH {
   grid-column: 3 / 10;
   grid-row: 5 / 10;
   display: flex;
-  transform: translate(-0.5rem, 0);
+  transform: translate(-0.6rem, 0);
 }
 /* Container p */
 .containerP {
@@ -104,32 +93,25 @@ body {
 .pLine {
   letter-spacing: -3.2rem;
   z-index: 1;
-  opacity: 0;
+  opacity: 0.9;
   transform: translate(0, 3.5rem);
-  animation: pLine 1s ease-in-out forwards 1s;
+  animation: pLine 4s ease-in-out infinite;
 }
 /* Buchstabe o */
 .o {
   letter-spacing: -1.1rem;
-  animation: visibilityLetterO 2.5s ease-in-out forwards;
+  animation: visibilityLetterO 4s ease-in-out infinite;
 }
 /* Nummer 99 */
 .number {
   font-size: 2.3rem;
   transform: translate(0.5rem, -4.5rem);
-  opacity: 0;
-  animation: opacity 0.2s ease-in-out forwards 6s;
 }
 /* Container Buchstabe h und Nummer 99 */
 .containerH99 {
   display: flex;
   flex-direction: column;
   transform: translate(0, 4rem);
-}
-/* Buchstabe h */
-.h {
-  opacity: 0;
-  animation: opacity 0.2s ease-in-out forwards 3s;
 }
 /* Container i */
 .containerI {
@@ -141,8 +123,6 @@ body {
 /* Buchstabe i */
 .i {
   transform: translate(0.8rem, 3.6rem);
-  opacity: 0;
-  animation: opacity 0.5s ease-in-out forwards 4.5s;
 }
 /* Container s */
 .containerS {
@@ -152,18 +132,24 @@ body {
 /* Buchstabe s */
 .s {
   transform: translate(0, 0.3rem);
-  opacity: 0;
-  animation: opacity 0.5s ease-in-out forwards 5s;
 }
 /* Animation Linie bei p */
 @keyframes pLine {
   0% {
-    transform: translate(0, -200px) scaleY(3); /* Startet 200px höher und ist grösser */
-    opacity: 0; /* Startet unsichtbar */
+    transform: translate(0, -200px) scaleY(3);
+    opacity: 0;
+  }
+  40% {
+    transform: translate(0, 3.5rem) scaleY(1); 
+    opacity: 0.9;
+  }
+  60% {
+    transform: translate(0, 3.5rem) scaleY(1);
+    opacity: 0.9;
   }
   100% {
-    transform: translate(0, 3.5rem) scaleY(1); /* Endposition */
-    opacity: 0.9; /* Endposition wird sichtbar */
+    transform: translate(0, 400px) scaleY(2);
+    opacity: 0;
   }
 }
  /* Animation Sichtbarkeit Buchstabe o bei p */
@@ -171,17 +157,17 @@ body {
   0% {
     opacity: 0; /* Startet unsichtbar */
   }
-  100% {
-    opacity: 100; /* Endposition wird sichtbar */
+  40% {
+    opacity: 50; /* Wird sichtbar */
   }
-}
-/* Animation Sichtbarkeit */
-@keyframes opacity {
-  0% {
-    opacity: 0;
+  50% {
+    opacity: 100; /* Wird sichtbar */
+  }
+  60% {
+    opacity: 50; /* Wird sichtbar */
   }
   100% {
-    opacity: 100;
+    opacity: 0; /* Endposition unsichtbar */
   }
 }
 
@@ -218,7 +204,7 @@ MOBILE AB 390px
   .pLine {
     letter-spacing: -3.8rem;
     transform: translate(0, 4rem);
-    animation: pLine390px 2s ease-in-out forwards; /* Animation über 2 Sekunden */
+    animation: pLine390px 4s ease-in-out infinite;
   }
   /* Buchstabe o */
   .o {
@@ -244,12 +230,20 @@ MOBILE AB 390px
   /* Animation Linie bei p */
   @keyframes pLine390px {
     0% {
-      transform: translate(0, -200px) scaleY(3); /* Startet 200px höher und ist grösser */
+      transform: translate(0, -200px) scaleY(3); 
       opacity: 0;
     }
-    100% {
-      transform: translate(0, 4rem) scaleY(1); /* Endposition für 390px und grösser */
+    40% {
+      transform: translate(0, 4rem) scaleY(1); 
       opacity: 0.9;
+    }
+    60% {
+      transform: translate(0, 4rem) scaleY(1);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate(0, 400px) scaleY(2);
+      opacity: 0;
     }
   }
 }
@@ -335,7 +329,7 @@ TABLET PORTRAIT AB 768px
   .pLine {
     letter-spacing: -4.9rem;
     transform: translate(0, 5rem);
-    animation: pLine768px 2s ease-in-out forwards; /* Animation über 2 Sekunden */
+    animation: pLine768px 4s ease-in-out infinite;
   }
   /* Buchstabe o */
   .o {
@@ -371,12 +365,20 @@ TABLET PORTRAIT AB 768px
   /* Animation Linie bei p */
   @keyframes pLine768px {
     0% {
-      transform: translate(0, -300px) scaleY(3); /* Startet 300px höher und ist grösser */
+      transform: translate(0, -300px) scaleY(3);
       opacity: 0;
     }
-    100% {
-      transform: translate(0, 5rem) scaleY(1); /* Endposition für 768px */
+    40% {
+      transform: translate(0, 5rem) scaleY(1);
       opacity: 0.9;
+    }
+    60% {
+      transform: translate(0, 5rem) scaleY(1);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate(0, 500px) scaleY(2);
+      opacity: 0;
     }
   }  
 }
@@ -436,7 +438,7 @@ TABLET LANDSCAPE AB 1024px
   .pLine {
     letter-spacing: -5.5rem;
     transform: translate(0.5rem, 6.5rem);
-    animation: pLine1024px 2s ease-in-out forwards; /* Animation über 2 Sekunden */
+    animation: pLine1024px 4s ease-in-out infinite;
   }
   /* Buchstabe o */
   .o {
@@ -471,14 +473,22 @@ TABLET LANDSCAPE AB 1024px
   /* Animation Linie bei p */
   @keyframes pLine1024px {
     0% {
-      transform: translate(0.5rem, -300px) scaleY(3); /* Startet 300px höher und ist grösser */
+      transform: translate(0.5rem, -300px) scaleY(3);
       opacity: 0;
     }
-    100% {
-      transform: translate(0.5rem, 6.5rem) scaleY(1); /* Endposition für 1024px */
+    40% {
+      transform: translate(0.5rem, 6.5rem) scaleY(1);
       opacity: 0.9;
     }
-  }  
+    60% {
+      transform: translate(0.5rem, 6.5rem) scaleY(1);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate(0.5rem, 500px) scaleY(2);
+      opacity: 0;
+    }
+  }
 }
 
 /****************************************
@@ -536,7 +546,7 @@ DESKTOP AB 1536px
   .pLine {
     letter-spacing: -6.2rem;
     transform: translate(0, 7rem);
-    animation: pLine1536px 2s ease-in-out forwards; /* Animation über 2 Sekunden */
+    animation: pLine1536px 4s ease-in-out infinite;
   }
   /* Container p */
   .containerP {
@@ -566,12 +576,20 @@ DESKTOP AB 1536px
   /* Animation Linie bei p */
   @keyframes pLine1536px {
     0% {
-      transform: translate(0, -300px) scaleY(3); /* Startet 300px höher und ist grösser */
+      transform: translate(0, -300px) scaleY(3);
       opacity: 0;
     }
-    100% {
-      transform: translate(0, 7rem) scaleY(1); /* Endposition für 1536px */
+    40% {
+      transform: translate(0, 7rem) scaleY(1);
       opacity: 0.9;
+    }
+    60% {
+      transform: translate(0, 7rem) scaleY(1);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate(0, 600px) scaleY(2);
+      opacity: 0;
     }
   }  
 }

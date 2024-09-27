@@ -51,8 +51,6 @@ body {
 /* Buchstabe g */
 .g {
   transform: translate(0.7rem, 1.5rem);
-  opacity: 0;
-  animation: opacity 0.1s ease-in-out forwards 2.5s;
 }
 /* Container r */
 .containerR {
@@ -62,8 +60,6 @@ body {
 /* Buchstabe r */
 .r {
   transform: translate(-0.6rem, 1.5rem);
-  opacity: 0;
-  animation: opacity 0.2s ease-in-out forwards 3.5s;
 }
 /* Container graphis */
 .containerGraphis {
@@ -75,18 +71,11 @@ body {
 .graphis {
   font-size: 2.5rem;
   transform: translate(2rem, 1rem) rotate(-90deg);
-  opacity: 0;
-  animation: opacity 0.2s ease-in-out forwards 5.5s;
 }
 /* Container a */
 .containerA {
   grid-column: 8 / 10;
   grid-row: 1 / 4;
-}
-/* Buchstabe a */
-.a {
-  opacity: 0;
-  animation: opacity 0.2s ease-in-out forwards 4s;
 }
 /* Container ph */
 .containerPH {
@@ -104,9 +93,9 @@ body {
 .pLine {
   letter-spacing: -3.2rem;
   z-index: 1;
-  opacity: 0;
+  opacity: 0.9;
   transform: translate(0, 3.5rem);
-  animation: pLine 1s ease-in-out forwards 1s;
+  animation: pLine 2s ease-in-out forwards; /* Animation über 2 Sekunden */
 }
 /* Buchstabe o */
 .o {
@@ -117,19 +106,12 @@ body {
 .number {
   font-size: 2.3rem;
   transform: translate(0.5rem, -4.5rem);
-  opacity: 0;
-  animation: opacity 0.2s ease-in-out forwards 6s;
 }
 /* Container Buchstabe h und Nummer 99 */
 .containerH99 {
   display: flex;
   flex-direction: column;
   transform: translate(0, 4rem);
-}
-/* Buchstabe h */
-.h {
-  opacity: 0;
-  animation: opacity 0.2s ease-in-out forwards 3s;
 }
 /* Container i */
 .containerI {
@@ -141,8 +123,6 @@ body {
 /* Buchstabe i */
 .i {
   transform: translate(0.8rem, 3.6rem);
-  opacity: 0;
-  animation: opacity 0.5s ease-in-out forwards 4.5s;
 }
 /* Container s */
 .containerS {
@@ -152,8 +132,6 @@ body {
 /* Buchstabe s */
 .s {
   transform: translate(0, 0.3rem);
-  opacity: 0;
-  animation: opacity 0.5s ease-in-out forwards 5s;
 }
 /* Animation Linie bei p */
 @keyframes pLine {
@@ -173,15 +151,6 @@ body {
   }
   100% {
     opacity: 100; /* Endposition wird sichtbar */
-  }
-}
-/* Animation Sichtbarkeit */
-@keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100;
   }
 }
 
