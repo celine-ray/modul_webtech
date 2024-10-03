@@ -209,6 +209,7 @@ body {
   }
 }
 
+
 /****************************************
 MOBILE AB 390px
 ****************************************/
@@ -241,7 +242,7 @@ MOBILE AB 390px
   .pLine {
     letter-spacing: -3.8rem;
     transform: translate(0, 4rem);
-    animation: pLine390px 1s ease-in-out forwards; /* Animation über 2 Sekunden */
+    animation: pLine 1s ease-in-out forwards; /* Animation über 2 Sekunden */
   }
   /* Buchstabe o */
   .o {
@@ -265,7 +266,7 @@ MOBILE AB 390px
     transform: translate(-0.5rem, 0.3rem);
   }
   /* Animation Linie bei p */
-  @keyframes pLine390px {
+  @keyframes pLine {
     0% {
       transform: translate(0, -200px) scaleY(3); /* Startet 200px höher und ist grösser */
       opacity: 0;
@@ -358,7 +359,6 @@ TABLET PORTRAIT AB 768px
   .pLine {
     letter-spacing: -4.9rem;
     transform: translate(0, 5rem);
-    animation: pLine768px 1s ease-in-out forwards; /* Animation über 2 Sekunden */
   }
   /* Buchstabe o */
   .o {
@@ -392,7 +392,7 @@ TABLET PORTRAIT AB 768px
     transform: translate(-1.2rem, 2.5rem);
   }
   /* Animation Linie bei p */
-  @keyframes pLine768px {
+  @keyframes pLine {
     0% {
       transform: translate(0, -300px) scaleY(3); /* Startet 300px höher und ist grösser */
       opacity: 0;

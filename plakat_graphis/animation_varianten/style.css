@@ -113,9 +113,12 @@ body {
 /* Buchstabe o */
 .o {
   letter-spacing: -1.1rem;
-  animation: grow 1s ease forwards;
+  /* animation: visibilityLetterO 2.5s ease-in-out forwards; */
+  /* animation: grow 1s ease forwards; */
   /* backface-visibility: visible !important;
-	animation: flipSimple 1s ease forwards; */
+	animation: flipPerspective 2s ease forwards; */
+  backface-visibility: visible !important;
+	animation: flipSimple 1s ease forwards;
 }
 /* Nummer 99 */
 .number {
@@ -170,6 +173,15 @@ body {
     opacity: 0.9; /* Endposition wird sichtbar */
   }
 }
+ /* Animation Sichtbarkeit Buchstabe o bei p */
+ @keyframes visibilityLetterO {
+  0% {
+    opacity: 0; /* Startet unsichtbar */
+  }
+  100% {
+    opacity: 100; /* Endposition wird sichtbar */
+  }
+}
 /* Animation grow Buchstabe o bei p */
 @keyframes grow {
   from {
@@ -180,6 +192,29 @@ body {
     transform: scale(1);
     z-index: 0;
   }
+}
+/* Animation Flip Buchstabe o bei p */
+@keyframes flip {
+	0% {
+		transform: rotateY(0);
+		animation-timing-function: ease-out;
+	}
+	40% {
+		transform: translateZ(150px) rotateY(170deg);
+		animation-timing-function: ease-out;
+	}
+	50% {
+		transform: translateZ(150px) rotateY(190deg) scale(1);
+		animation-timing-function: ease-in;
+	}
+	80% {
+		transform: rotateY(360deg) scale(.95);
+		animation-timing-function: ease-in;
+	}
+	100% {
+		transform: scale(1);
+		animation-timing-function: ease-in;
+	}
 }
 /* Animation FlipSimple Buchstabe o bei p */
 @keyframes flipSimple {
@@ -199,7 +234,30 @@ body {
     z-index: 0;
 	}
 }
-/* Animation Sichtbarkeit bei Buchstaben*/
+/* Animation Flip Perspective Buchstabe o bei p */
+@keyframes flipPerspective {
+	0% {
+		transform: perspective(400px) rotateY(0);
+		animation-timing-function: ease-out;
+	}
+	40% {
+		transform: perspective(400px) translateZ(150px) rotateY(170deg);
+		animation-timing-function: ease-out;
+	}
+	50% {
+		transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+		animation-timing-function: ease-in;
+	}
+	80% {
+		transform: perspective(400px) rotateY(360deg) scale(.95);
+		animation-timing-function: ease-in;
+	}
+	100% {
+		transform: perspective(400px) scale(1);
+		animation-timing-function: ease-in;
+	}
+}
+/* Animation Sichtbarkeit */
 @keyframes opacity {
   0% {
     opacity: 0;
@@ -208,6 +266,7 @@ body {
     opacity: 100;
   }
 }
+
 
 /****************************************
 MOBILE AB 390px

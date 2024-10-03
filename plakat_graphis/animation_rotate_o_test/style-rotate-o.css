@@ -1,0 +1,17 @@
+/* Basisstil für das O */
+.rotating-o {
+  font-size: 100px; /* Grösse des O */
+  display: inline-block;
+  animation: rotateO 3s infinite linear; /* Animation anwenden */
+  transform-origin: center; /* Drehpunkt in der Mitte */
+}
+
+/* Definition der Keyframes für die Drehung */
+@keyframes rotateO {
+  from {
+    transform: rotate(0deg); /* Anfangsrotation */
+  }
+  to {
+    transform: rotate(360deg); /* Endrotation nach einer Umdrehung */
+  }
+}
