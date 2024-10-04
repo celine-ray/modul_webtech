@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro Javascript</title>
+    <style>
+      body {
+        background-color: beige;
+        height: 200vh;
+        width: 100vw;
+        mix-blend-mode: multiply;
+      }
+      #element {
+        position: absolute;
+        top: 100px;
+        left: 0px;
+        border: 2px solid black;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: flex-end;
+        border-radius: 50%;
+      }
+      .eye {
+        background-color: black;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        margin: 20px;
+      }
+      .specialbutton {
+        background-color: rosybrown;
+        color: black;
+      }
+      .btn {
+        padding: 10px;
+        border: none;
+      }
+      .btnNewElement {
+        background-color: brown;
+        color: white;
+      }
+      .btnAnimation {
+        background-color: white;
+      }
+      .random {
+        background-color: olive;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        padding: 5px;
+      }
+      @keyframes anim {
+        0% {
+          box-shadow: 0px 0px 8px 8px #e803ba;
+        }
+        25% {
+          box-shadow: 0px 0px 0px 8px #e803ba, 0px 0px 8px 16px #e8035b;
+          background-color: #03e8ba;
+        }
+        50% {
+          box-shadow: 0px 0px 0px 8px #e803ba, 0px 0px 0px 16px #e84803,
+            0px 0px 8px 24px #e85f03;
+          background-color: #038ce8;
+        }
+        75% {
+          box-shadow: 0px 0px 0px 8px #e803ba, 0px 0px 0px 16px #e84803,
+            0px 0px 0px 24px #e85f03, 0px 0px 8px 32px #e8a303;
+        }
+      }
+      #kreis2 {
+        position: absolute;
+        top: 250px;
+        border-radius: 50%;
+        width: 400px;
+        height: 400px;
+        background-color: #000506;
+        animation-name: anim;
+        animation-duration: 4s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+      }
+      .cursorFollower {
+        position: fixed;
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid black;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.3s;
+        mix-blend-mode: difference;
+        z-index: 999;
+        pointer-events: none;
+      }
+      .cursorFollowerDot {
+        position: fixed;
+        width: 0.8rem;
+        height: 0.8rem;
+        background: #000;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.3s;
+        mix-blend-mode: difference;
+        z-index: 999;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // alert("hallo seite geladen");
+    </script>
+    <div id="element"><div class="eye"></div></div>
+    <button class="btn specialbutton" onclick="buttonPressed()">
+      Click mich!
+    </button>
+    <button class="btn btnNewElement" onclick="neuesElement()">
+      Click mich!
+    </button>
+    <div id="kreis2"></div>
+    <button class="btn btnAnimation" onclick="starteAnimation()">
+      Animiere den Kreis
+    </button>
+    <span id="cursorFollower" class="cursorFollower"></span>
+    <span id="cursorFollowerDot" class="cursorFollowerDot"></span>
+    <script src="main.js"></script>
+  </body>
+</html>

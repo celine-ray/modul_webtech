@@ -53,7 +53,7 @@ body {
 .g {
   transform: translate(0.7rem, 1.5rem);
   opacity: 0;
-  animation: opacity 1s ease-in-out forwards 1s;
+  animation: opacity 1s ease-in-out forwards 0.8s;
 }
 /* Container r */
 .containerR {
@@ -64,7 +64,7 @@ body {
 .r {
   transform: translate(-0.6rem, 1.5rem);
   opacity: 0;
-  animation: opacity 1s ease-in-out forwards 1.4s;
+  animation: opacity 1s ease-in-out forwards 1.2s;
 }
 /* Container graphis */
 .containerGraphis {
@@ -77,7 +77,7 @@ body {
   font-size: 2.5rem;
   transform: translate(2rem, 1rem) rotate(-90deg);
   opacity: 0;
-  animation: opacity 1s ease-in-out forwards 2.2s;
+  animation: opacity 1s ease-in-out forwards 2s;
   transition: transform 0.5s ease-in-out;
 }
 /* Container a */
@@ -88,7 +88,7 @@ body {
 /* Buchstabe a */
 .a {
   opacity: 0;
-  animation: opacity 1s ease-in-out forwards 1.6s;
+  animation: opacity 1s ease-in-out forwards 1.4s;
 }
 /* Container ph */
 .containerPH {
@@ -112,26 +112,27 @@ body {
 }
 /* Buchstabe o */
 .o {
-  animation: grow 1s ease-in-out forwards;
-  transform-origin: center;
+  letter-spacing: -1.1rem;
+  backface-visibility: visible !important;
+	animation: flipPerspective 2s ease forwards;
 }
 /* Nummer 99 */
 .number {
   font-size: 2.3rem;
   transform: translate(0.5rem, -4.5rem);
   opacity: 0;
-  animation: opacity 1s ease-in-out forwards 2.4s;
+  animation: opacity 1s ease-in-out forwards 2.2s;
 }
 /* Container Buchstabe h und Nummer 99 */
 .containerH99 {
   display: flex;
   flex-direction: column;
-  transform: translate(-1.1rem, 4rem);
+  transform: translate(0, 4rem);
 }
 /* Buchstabe h */
 .h {
   opacity: 0;
-  animation: opacity 1s ease-in-out forwards 1.2s;
+  animation: opacity 1s ease-in-out forwards 1s;
 }
 /* Container i */
 .containerI {
@@ -144,7 +145,7 @@ body {
 .i {
   transform: translate(0.8rem, 3.6rem);
   opacity: 0;
-  animation: opacity 1s ease-in-out forwards 1.8s;
+  animation: opacity 1s ease-in-out forwards 1.6s;
 }
 /* Container s */
 .containerS {
@@ -155,7 +156,7 @@ body {
 .s {
   transform: translate(0, 0.3rem);
   opacity: 0;
-  animation: opacity 1s ease-in-out forwards 2s;
+  animation: opacity 1s ease-in-out forwards 1.8s;
 }
 /* Animation Linie bei p */
 @keyframes pLine {
@@ -166,6 +167,15 @@ body {
   100% {
     transform: translate(0, 3.5rem) scaleY(1); /* Endposition */
     opacity: 0.9; /* Endposition wird sichtbar */
+  }
+}
+ /* Animation Sichtbarkeit Buchstabe o bei p */
+ @keyframes visibilityLetterO {
+  0% {
+    opacity: 0; /* Startet unsichtbar */
+  }
+  100% {
+    opacity: 100; /* Endposition wird sichtbar */
   }
 }
 /* Animation grow Buchstabe o bei p */
@@ -179,7 +189,30 @@ body {
     z-index: 0;
   }
 }
-/* Animation Sichtbarkeit bei Buchstaben*/
+/* Animation Flip Perspective Buchstabe o bei p */
+@keyframes flipPerspective {
+	0% {
+		transform: perspective(400px) rotateY(0);
+		animation-timing-function: ease-out;
+	}
+	40% {
+		transform: perspective(400px) translateZ(150px) rotateY(170deg);
+		animation-timing-function: ease-out;
+	}
+	50% {
+		transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+		animation-timing-function: ease-in;
+	}
+	80% {
+		transform: perspective(400px) rotateY(360deg) scale(.95);
+		animation-timing-function: ease-in;
+	}
+	100% {
+		transform: perspective(400px) scale(1);
+		animation-timing-function: ease-in;
+	}
+}
+/* Animation Sichtbarkeit */
 @keyframes opacity {
   0% {
     opacity: 0;
@@ -188,6 +221,7 @@ body {
     opacity: 100;
   }
 }
+
 
 /****************************************
 MOBILE AB 390px
@@ -223,6 +257,10 @@ MOBILE AB 390px
     transform: translate(0, 4rem);
     animation: pLine390px 1s ease-in-out forwards; /* Animation über 2 Sekunden */
   }
+  /* Buchstabe o */
+  .o {
+    letter-spacing: -1.3rem;
+  }
   /* Nummer 99 */
   .number {
     font-size: 2.8rem;
@@ -230,7 +268,7 @@ MOBILE AB 390px
   }
   /* Container Buchstabe h und Nummer 99 */
   .containerH99 {
-    transform: translate(-1.3rem, 3rem);
+    transform: translate(0, 3rem);
   }
   /* Buchstabe i */
   .i {
@@ -336,9 +374,13 @@ TABLET PORTRAIT AB 768px
     transform: translate(0, 5rem);
     animation: pLine768px 1s ease-in-out forwards; /* Animation über 2 Sekunden */
   }
+  /* Buchstabe o */
+  .o {
+    letter-spacing: -1.6rem;
+  }
   /* Container Buchstabe h und Nummer 99 */
   .containerH99 {
-    transform: translate(-1.7rem, 2rem);
+    transform: translate(0, 2rem);
   }
   /* Nummer 99 */
   .number {
@@ -373,7 +415,7 @@ TABLET PORTRAIT AB 768px
       transform: translate(0, 5rem) scaleY(1); /* Endposition für 768px */
       opacity: 0.9;
     }
-  }
+  }  
 }
 
 /****************************************
@@ -433,14 +475,19 @@ TABLET LANDSCAPE AB 1024px
     transform: translate(0.5rem, 6.5rem);
     animation: pLine1024px 1s ease-in-out forwards; /* Animation über 2 Sekunden */
   }
-  /* Container Buchstabe h und Nummer 99 */
-  .containerH99 {
-    transform: translate(-2.1rem, 2rem);
+  /* Buchstabe o */
+  .o {
+    letter-spacing: -2rem;
   }
   /* Nummer 99 */
   .number {
     font-size: 4rem;
     transform: translate(1.2rem, -8.5rem);
+  }
+  /* Container Buchstabe h und Nummer 99 */
+  .containerH99 {
+    /*flex-wrap: wrap;*/
+    transform: translate(0, 2rem);
   }
   /* Container i */
   .containerI {
@@ -468,7 +515,7 @@ TABLET LANDSCAPE AB 1024px
       transform: translate(0.5rem, 6.5rem) scaleY(1); /* Endposition für 1024px */
       opacity: 0.9;
     }
-  }
+  }  
 }
 
 /****************************************
@@ -532,6 +579,10 @@ DESKTOP AB 1536px
   .containerP {
     transform: translate(0, 5rem);
   }
+  /* Buchstabe o */
+  .o {
+    letter-spacing: -2.1rem;
+  }
   /* Nummer 99 */
   .number {
     font-size: 4.3rem;
@@ -539,7 +590,7 @@ DESKTOP AB 1536px
   }
   /* Container Buchstabe h und Nummer 99 */
   .containerH99 {
-    transform: translate(-2.1rem, 6rem);
+    transform: translate(0, 6rem);
   }
   /* Buchstabe i */
   .i {
@@ -559,5 +610,5 @@ DESKTOP AB 1536px
       transform: translate(0, 7rem) scaleY(1); /* Endposition für 1536px */
       opacity: 0.9;
     }
-  }
+  }  
 }
